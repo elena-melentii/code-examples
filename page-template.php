@@ -3,6 +3,11 @@
  * Template Name: Recipe Page 2023
  * Template Post Type: recipe
  *
+ * This is the recipe page template for the 2023 version of the website.
+ * It is used to display recipe posts and includes various functions
+ * to enqueue scripts and styles, display recipe information, and
+ * render ads.
+ *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package bumblebee
@@ -11,8 +16,11 @@ namespace RD_Toh\Content\Recipe;
 
 use RD_Toh\Resource;
 
+
+// Include the parse-content.php file which contains functions used to parse and format recipe content.
 require 'inc/parse-content.php';
 
+// Add actions to enqueue scripts and styles, and modify ad targeting.
 add_action(
 	'wp_enqueue_scripts',
 	/**
@@ -21,6 +29,8 @@ add_action(
 	function() {
 		wp_register_script( 'recipe-comments', get_stylesheet_directory_uri() . '/js/recipes/comments.js', array(), '1.0.1', true );
 		wp_register_script( 'recipe-reviews', get_stylesheet_directory_uri() . '/js/recipes/reviews.js', array( 'wp-util' ), '1.0.0', true );
+
+		// Define localized data used for recipe reviews.
 		$review_localized_data = array(
 			'ajax_url'                       => admin_url( 'admin-ajax.php' ),
 			'review_load_more_action'        => 'toh_review_load_more',
@@ -29,36 +39,44 @@ add_action(
 			'review_submission_action'       => 'toh_review_submission',
 			'review_submission_nonce'        => wp_create_nonce( 'recipe_submit_review' ),
 		);
+ 
+		// Localize the recipe-reviews script with the review localized data.
 		wp_localize_script( 'recipe-reviews', 'toh', $review_localized_data );
 
+		// Check if the OpenWeb conversation widget is disabled and enqueue the recipe-reviews and recipe-comments scripts.
 		$openweb_is_disabled = ! function_exists( 'tmbi_ow_output_conversation_widget' );
 		if ( $openweb_is_disabled ) {
 			wp_enqueue_script( 'recipe-reviews' );
 			wp_enqueue_script( 'recipe-comments' );
 		}
 
+		// Enqueue scripts used for styling recipe pages and scrolling to recipe reviews.
 		wp_enqueue_style( 'page-css', get_template_directory_uri() . '/page.css', array(), '1.0.0' );
 		wp_enqueue_style( 'recipe-css', get_stylesheet_directory_uri() . '/recipe-2023.css', array(), '1.0.0' );
 		wp_enqueue_script( 'review-scroll', get_stylesheet_directory_uri() . '/js/recipes/recipe-review-scroll.js', array(), '1.0.1', true );
 
+		// Check if Chicory is enabled and enqueue the Chicory scripts.
 		if ( toh_child_is_chicory_enabled() ) {
 			$tmbi_chicory_settings = get_option( 'tmbi_chicory_settings' );
 			$script_slug           = ! empty( $tmbi_chicory_settings['chicory_lazy_loading'] ) ? 'chicory-async-script' : 'chicory-script';
 			wp_enqueue_script( $script_slug );
 			wp_enqueue_script( 'chicory-events' );
 		}
-
+		
+		// Enqueue the social share toggle script.
 		wp_enqueue_script( 'toh-social-share', get_stylesheet_directory_uri() . '/js/recipes/social-share-toggle.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'pinterest-pinit' );
-
+		
+		// Enqueue the recipe box save to recipe box script.
 		if ( function_exists( 'toh_recipe_box_enqueue_save_to_recipe_box' ) ) {
 			toh_recipe_box_enqueue_save_to_recipe_box();
 		}
-
+		
+		// Enqueue the native recipe script for ABT235Variant.
 		if ( 'ABT235Variant' === bumblebee_get_ab_variant() ) {
 			wp_enqueue_script( 'hero-image-recipe-script', get_theme_file_uri( 'js/recipes/native-recipe.js' ), array( 'jquery', 'wp-util' ), '1.1.0', true );
 		}
-
+		// Enqueue the owl carousel and owl theme default styles.
 		wp_enqueue_style( 'owl-style', get_template_directory_uri() . '/styles/owl-css/owl-carousel-min.css', array(), '1.0.0' );
 		wp_enqueue_style( 'owl-theme-default-style', get_template_directory_uri() . '/styles/owl-css/owl-theme-default-min.css', array(), '1.0.0' );
 		wp_enqueue_script( 'category-re-circ-slider', get_template_directory_uri() . '/js/category-re-circ.js', array( 'jquery' ), '1.0.0', true );
@@ -105,6 +123,7 @@ add_filter(
 	}
 );
 
+// Add a class to the body based on the A/B variant.
 add_filter(
 	'body_class',
 	function( $classes ) {
@@ -117,8 +136,8 @@ add_filter(
 	}
 );
 
+// Get the recipe object.
 $recipe = new Resource\RecipeResource();
-//print("<pre>".print_r($recipe,true)."</pre>");
 
 $id                    = get_the_ID();
 $recipe_video_id       = $recipe->get_recipe_video();
@@ -132,12 +151,18 @@ print("<pre>".print_r($attachment,true)."</pre>");
 <?php get_header(); ?>
 <main id="content" class="pure-g recipe-template recipe-template-2023">
 	<?php do_action( 'tmbi_recipe_recirc_strip', get_the_ID() ); ?>
-	<?php get_partial( 'partials/recipes/mod-header', array( 'recipe' => $recipe ) ); ?>	
+	<?php 
+		// Include the mod-header partial.
+		get_partial( 'partials/recipes/mod-header', array( 'recipe' => $recipe ) ); 
+  	?>	
 
 	<div class="pure-g pure-u-lg-1">
 		<div class="page-content">
 			<section class="pure-u-1 pure-u-lg-5-8">
-				<?php get_partial( 'partials/ads/pre-article-ad-unit', array( 'recipe' => $recipe ) ); ?>
+				<?php 
+				// Output the pre-article ad unit.
+				get_partial( 'partials/ads/pre-article-ad-unit', array( 'recipe' => $recipe ) ); 
+				?>
 				<div class="entry-content">
 					<?php echo apply_filters( 'the_content', parse_body_content() ); ?>
 				</div>
@@ -148,7 +173,8 @@ print("<pre>".print_r($attachment,true)."</pre>");
 					</div>
 				<?php endif; ?>
 				<div class="ad-container-wrapper">
-					<?php 	bumblebee_render_ad(
+					<?php 	// Render the ad with the specified targeting.
+							bumblebee_render_ad(
 								uniqid( 'ad' ),
 								array(
 									'slot-name'        => 'content_3',
