@@ -1,0 +1,7 @@
+stages:
+  - test
+
+include:
+  - project: 'templates/gitlab-ci'
+    file: 'jest-test.gitlab-ci.yml'
+    ref: 'onerepo'

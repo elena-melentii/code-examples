@@ -1,0 +1,24 @@
+{
+  "name": "tmbi/pup-shoppable-fhm-helper",
+  "description": "Helper plugin for shoppable cart button implemented on FHM",
+  "keywords": [
+    "cart",
+    "products",
+    "plugin"
+  ],
+  "type": "wordpress-plugin",
+  "homepage": "https://devops.45air.co/tmbi/plugins/pup-shoppable-fhm-helper",
+  "license": "GPL-2",
+  "require": {
+    "php": ">=8.0"
+  },
+  "repositories": {
+    "satis": {
+      "type": "composer",
+      "url": "https://tmbi-composer.air-cloud.app"
+    }
+  },
+  "require-dev": {
+    "tmbi/wpdt-test-runner": "dev-master"
+  }
+}

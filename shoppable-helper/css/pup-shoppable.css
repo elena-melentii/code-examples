@@ -1,0 +1,277 @@
+/* Shoppable Cart Button */
+.shoppable__v5__cart__btn_container,
+.shoppable__v5__cart__btn_container_qty {
+	display: none !important;
+}
+
+/* Interior pages CSS */
+.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 div#shoppable__v5__cart__btn_container:first-child {
+	font-size: 26px;
+}
+
+.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container {
+	margin-top: 10px;
+}
+
+.header-2021 #magazine-subscription-wrapper.header-cmu-ad-wrapper .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container {
+	margin-top: 0;
+}
+
+.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container_qty {
+	margin-top: -14px;
+	position: relative;
+	transform: none;
+	padding: 0;
+}
+
+.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 .shoppable__v5__cart__count {
+	line-height: 1 !important;
+}
+
+.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 {
+	display: flex;
+	margin-left: 20px;
+	margin-top: -14px;
+	position: relative;
+	width: 100%;
+}
+
+.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 div#shoppable__v5__cart__btn_container:first-child {
+	align-items: center;
+	font-size: 26px;
+}
+
+.header-2021 #magazine-subscription-wrapper.header-cmu-ad-wrapper {
+	grid-template-columns: 260px 45px !important;
+}
+
+@media screen and (max-width: 919px) {
+	.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 {
+		border-bottom: 1px solid #959595;
+		order: 1;
+		margin-bottom: 5px;
+		margin-left: 0;
+		padding-bottom: 5px;
+		width: 100px;
+	}
+
+	.header-2021 #magazine-subscription-wrapper #header-2021-cmu-ad-wrapper {
+		order: 2;
+	}
+
+	.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 div:first-child {
+		margin: auto !important;
+	}
+
+	.header-2021 #magazine-subscription-wrapper .mag-subscribe-btn-wrapper-mobile,
+	.header-2021 #magazine-subscription-wrapper .mag-subscribe-wrapper {
+		order: 2;
+	}
+}
+
+
+@media screen and (max-width: 1023px) {
+	.home .header-2021 .shoppable-cart-btn-2021 {
+		margin-left: -45px;
+		margin-top: 5px;
+	}
+}
+
+/* Homepage pages CSS */
+.home .header-2021 #magazine-subscription-wrapper.header-cmu-ad-wrapper {
+	grid-template-columns: 385px 45px !important;
+}
+
+.home .header-2021 .shoppable-cart-btn-2021 div:first-child {
+	font-size: 26px;
+	margin-left: 0 !important;
+}
+
+.home .header-2021 .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container,
+.home .header-2021 .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container_qty {
+	display: flex;
+	margin: auto;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	top: 50%;
+	left: 50%;
+}
+
+@media screen and (max-width: 1023px) {
+
+	.home .header-2021 .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container,
+	.home .header-2021 .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container_qty {
+		left: auto;
+		right: 100px;
+	}
+}
+
+.home .header-2021 .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container svg {
+	color: #2C739F !important;
+}
+
+.home .header-2021 .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container_qty {
+	left: 0px;
+	top: -3px;
+}
+
+.home .header-2021 .shoppable-cart-btn-2021 .shoppable__v5__cart__count {
+	color: #ffffff !important;
+	font-size: 11px !important;
+	font-weight: 600 !important;
+	line-height: normal !important;
+}
+
+div#offcanvasRight img {
+	width: auto;
+}
+
+.header-2021 .content-wrapper #magazine-subscription-wrapper .subscription-flyout {
+	right: 70%;
+}
+
+.home .header-2021 .content-wrapper #magazine-subscription-wrapper {
+	grid-template-columns: 300px auto 45px;
+}
+
+.header-2021 .content-wrapper #magazine-subscription-wrapper {
+	grid-template-columns: 360px 135px 45px;
+}
+
+@media screen and (max-width: 1023px) {
+	.home .header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 .shoppable__v5__cart__btn_container_qty {
+		margin-top: -12px;
+	}
+
+}
+
+@media screen and (min-width: 1023px) {
+	.header-2021 #magazine-subscription-wrapper .shoppable-cart-btn-2021 {
+		width: 45px;
+	}
+}
+
+.jwplayer.jw-flag-floating.shoppable-cart-is-open .jw-wrapper {
+	left: 1rem;
+	right: auto;
+}
+
+.shoppable-single-card {
+	flex-direction: column;
+	float: left;
+	margin-bottom: 30px;
+	margin-right: 1%;
+	min-height: 280px;
+	text-align: center;
+	width: 24%;
+}
+
+.shoppable-single-card img {
+	display: block;
+	margin-bottom: 15px !important;
+}
+
+.shoppable-single-card h6 {
+	display: -webkit-box;
+	font-size: 13px;
+	margin-bottom: 0px !important;
+	min-height: 50px;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.shoppable-single-card b {
+	display: inline-block;
+	font-size: 14px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.shoppable-single-card .addtocartBtn {
+	background: #005177;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	margin: 2px;
+	padding: 10px;
+}
+
+.shoppable-single-card .learnmoreBtn {
+	background: #444444;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	margin: 2px;
+	padding: 10px;
+}
+
+.shoppable-single-card .credits-overlay {
+	display: none !important;
+}
+
+.post-template-default .shoppable-single-card .addtocartBtn,
+.page-template-default .shoppable-single-card .addtocartBtn,
+.post-template-default .shoppable-single-card .learnmoreBtn,
+.page-template-default .shoppable-single-card .learnmoreBtn {
+	font-size: 11px;
+	margin: 2px;
+	padding: 7px;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+
+	.post-template-default .shoppable-single-card,
+	.page-template-default .shoppable-single-card {
+		margin-right: 2.3%;
+		width: 31%;
+	}
+}
+
+@media (min-width: 831px) and (max-width: 1024px) {
+	.shoppable-single-card {
+		margin-right: 2.3%;
+		width: 31%;
+	}
+
+	.shoppable-single-card .addtocartBtn,
+	.shoppable-single-card .learnmoreBtn {
+		font-size: 11px;
+		margin: 2px;
+		padding: 7px;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 830px) {
+	.shoppable-single-card {
+		margin-right: 5%;
+		width: 45%;
+	}
+
+	.shoppable-single-card .addtocartBtn,
+	.shoppable-single-card .learnmoreBtn {
+		font-size: 11px;
+		margin: 2px;
+		padding: 7px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.shoppable-single-card {
+		margin-bottom: 30px;
+		margin-left: 20%;
+		width: 60%;
+	}
+
+	.shoppable-single-card .addtocartBtn,
+	.shoppable-single-card .learnmoreBtn {
+		font-size: 11px;
+		margin: 2px;
+		padding: 7px;
+	}
+
+	div.shoppable-single-card+* {
+		clear: both;
+	}
+}
